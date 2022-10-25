@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-
-
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +8,8 @@
 </head>
 <body>
 <h1>Welcome to do-while loop <br></h1> 
+
+
 <?php
 $a=11;
 do {
@@ -23,6 +22,8 @@ do {
     $a++;
 } while ($a <= 10);
 ?>
+
+
 </body>
 </html>
 

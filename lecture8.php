@@ -4,7 +4,7 @@ $n=8;
 while($n!=0){
     echo $n;
     echo"<br>";
-    $n-=1;
+    $n--; 
 }
 
 $e =90;

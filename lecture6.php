@@ -4,25 +4,16 @@ $b= 89;
 $c = 78;
 
 // if, else, elseif
-if($a>$b){
-    if($a>$c){
-        echo "$a is the greatest";
-    }
-    else{
-        echo "$c is the greatest";
-    }
-}
-else{
-    if($b>$c){
-        echo "$b is the greatest";
+$max = $a;
 
-    }
-    else{
-        echo "$c is the greatest";
-    }
+if($b>$max){
+    $max= $b;
+}
+if($c>$max){
+    $max=$c;
 }
 
-echo "<br>";
+echo $max . "<br>";
 
 ?>
 

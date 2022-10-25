@@ -9,6 +9,8 @@
 </head>
 <body>
 <h1>Welcome to For-each tutorial</h1>
+
+
 <?php
 
 $arr = array("banana", "Potato", "orange", "hui"); // Numeric array or Index array
