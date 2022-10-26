@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Registration Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     
   </head>
-  <nav class="navbar navbar-expand-lg bg-primary text-white">
+  <nav class="navbar navbar-expand-lg text-bg-info p-3">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Login</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,6 +40,27 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   </div>';
 }
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+$conn = mysqli_connect($servername, $username, $password);
+if(!$conn){
+  die("Sorry, we failed to connect with database ". mysqli_connect_error());
+}
+else{
+  echo "Connection was succesful <br>";
+}
+
+$sql = "Create database sample2";
+$result = mysqli_query($conn, $sql);
+
+if($result){
+  echo "Query is successful <br>";
+}
+else{
+  echo "Query is not succesful because of ".mysqli_error($conn). "<br>";
+}
 ?>
     
     <div class="container mt-5">
