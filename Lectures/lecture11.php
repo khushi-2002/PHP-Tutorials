@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1>Welcome to function tutorial</h1>
+
+
 <?php
 
   function marks($arr){
@@ -43,6 +45,8 @@
   $harry = array(190, 45 ,67,78,34);
   $avg_marks = avgmarks($harry);
 ?>
+
+
 </body>
 </html>
 

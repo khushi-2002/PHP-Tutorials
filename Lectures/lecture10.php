@@ -21,10 +21,9 @@ for ($i=0; $i < count($arr) ; $i++) {
 }
 
 // Better way
-
-foreach ($arr as $value) {
-    echo $value;
-    echo "<br>";
+echo "<br>";
+foreach($arr as $i){
+    echo $i. "<br>";
 }
 
 

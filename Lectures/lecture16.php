@@ -53,8 +53,8 @@
 // post directly send the information to the server without dispalying it on the link
 // get shows the parameter entered by the user in the link
 
-if ($_SERVER['REQUEST_METHOD']== 'POST'){ // isset method is used to check whether the variable is set or not while server method helps to check
-  // whether the request is of post or get
+if ($_SERVER['REQUEST_METHOD']== 'POST'){ // isset method is used to check whether the variable is set or not 
+  //while server method helps to check whether the request is of post or get
   $email = $_POST['email'];
   $password = $_POST['pass'];
   echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD']== 'POST'){ // isset method is used to check wheth
 ?>
 <div class="container mt-3">
   <h1>Please Enter your Email and password</h1>
-<form action="/phpt/lecture16.php" method="post"> 
+<form action="/Phpt/PHP-TUTORIALS/Lectures/lecture16.php" method="post"> 
   <div class="mb-3">
     <label for="email" class="form-label">Email address</label>
     <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">

@@ -25,9 +25,10 @@
      echo $favcol['Moussa']."<br>";
      echo $favcol['John']."<br>";
 
-
+     
      foreach ($favcol as $key => $value) {
          echo "The salary of $key= ".$value."<br>";
+        //  echo "$key"; valid syntax
      }
     
 
