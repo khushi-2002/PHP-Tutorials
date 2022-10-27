@@ -31,28 +31,28 @@
   <body>
 
 <?php
-
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    $email = $_POST['email'];
-    $password = $_POST['pass'];
-    echo '<div class="alert alert-success" role="alert">
-    You have sucessfully registered into the system with email ' . $email. ' and '. $password.'
-  </div>';
-}
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $password = $_POST['pass'];
+  $comment = $_POST['comment'];
 
+
+  
 $servername = "localhost";
 $username = "root";
 $password = "";
+$database = "registration";
 
-$conn = mysqli_connect($servername, $username, $password);
-if(!$conn){
-  die("Sorry, we failed to connect with database ". mysqli_connect_error());
-}
-else{
-  echo "Connection was succesful <br>";
-}
+// $conn = mysqli_connect($servername, $username, $password);
+// if(!$conn){
+//   die("Sorry, we failed to connect with database ". mysqli_connect_error());
+// }
 
-$sql = "Create database sample2";
+/*
+
+Created Database
+$sql = "Create database registration";
 $result = mysqli_query($conn, $sql);
 
 if($result){
@@ -61,18 +61,74 @@ if($result){
 else{
   echo "Query is not succesful because of ".mysqli_error($conn). "<br>";
 }
+
+*/
+
+$conn = mysqli_connect($servername, $username, $password, $database);
+if(!$conn){
+  die("Sorry, we failed to connect with database ". mysqli_connect_error());
+}
+
+
+/*
+$sql = "create table contacts(
+  sno int auto_increment,
+  name varchar(30),
+  email varchar(40),
+  password varchar(40),
+  comment varchar(40),
+  primary key(sno)
+
+)";
+
+$result = mysqli_query($conn, $sql);
+if($result ){
+  echo "Executed <br>";
+}
+else{
+  echo "Connection failed: " .mysqli_error($conn);
+}
+*/
+
+else{
+$sql = "INSERT INTO `contacts` (`name`, `email`, `password`, `comment`) VALUES ('$name', '$email', '$password', '$comment')";
+$result = mysqli_query($conn, $sql);
+
+
+if($result ){
+  echo '<div class="alert alert-success" role="alert">
+    Your details have been saved succesfully
+  </div>';
+}
+else{
+  echo '<div class="alert alert-danger" role="alert">
+    Ops! There is something wrong, Please try again later
+  </div>';
+}
+}
+}
+
 ?>
     
     <div class="container mt-5">
     <h1 >Please Register to your account</h1>
 <form action="/Phpt/PHP-TUTORIALS/Projects/Registration.php" method="post">
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
   </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Email</label>
+    <input type="email" name="email" class="form-control" id="exampleInputPassword1">
+  </div>
+
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
     <input type="password" name="pass" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Additional Comments? </label>
+    <textarea name="comment" id="comment" cols="50" rows="10"></textarea>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
