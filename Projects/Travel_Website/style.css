@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+}
+
+.container{
+
+    margin: 30px;
+    padding: 35px;
+    margin: auto;
+    max-width: 80%;
+}
+
+.container h1,p{
+    text-align: center;
+    line-height: 1cm;
+    color: white;
+}
+
+.container input, textarea{
+    width: 80%;
+    margin: 11px;
+    padding: 7px;
+    border: 2px solid;
+    border-radius: 7px;
+    opacity: 0.8;
+  
+}
+
+
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.img{
+    position: absolute;
+    z-index: -1;
+    max-width: 100%;
+    opacity: 0.8;
+}
+
+.btn{
+    font-size: 12px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: rgb(174, 204, 244);
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+}
+
+.message{
+    color: rgb(4, 63, 4);
+    font-weight: 200;
+    background-color: white;
+    opacity: 0.6;
+}
